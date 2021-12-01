@@ -1,4 +1,4 @@
-# Cyclic 's Kernel  ![](https://img.shields.io/badge/SupportedBy-Ret1w1cky-blueviolet)
+# Cyclic 's Kernel ![](https://img.shields.io/badge/SupportedBy-Ret1w1cky-blueviolet)
 ![ead16cbfc626e7ad4fa6ea3a64bf853](https://user-images.githubusercontent.com/72267897/144238466-848c703b-9984-4fad-a44a-e673dd136799.jpg)  
 ---- **A iot Bike sytem based on RaspberryPi, Ardiuino, etc**  
 ## 0x1 What is This?
