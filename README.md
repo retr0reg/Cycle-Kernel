@@ -13,7 +13,7 @@ Our plan That we wanted to inclues are:
 * Energy Store Device
 * Other IOT Devices
 # Generaters
-For our Generaters, We selected A **12V6WGenerater** For out Power source , So Far, The maximum of it is aboat ``5 ~ 6V``  
+For our Generaters, We selected A **12V6WGenerater** For out Power source , So Far, The maximum of it is aboat ``5~6V``  
 But, We were not exclude That the generater can generate above 6V, So far, The generater 's voltage output exceed our's minimum request.   
 
 ![image](https://user-images.githubusercontent.com/72267897/144243803-5e349f99-7565-4772-be53-28bdeb5097ea.png)  
