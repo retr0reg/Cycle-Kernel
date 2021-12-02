@@ -1,5 +1,6 @@
 # Cyclic 's Kernel ![](https://img.shields.io/badge/SupportedBy-Ret1w1cky-blueviolet)
-![ead16cbfc626e7ad4fa6ea3a64bf853](https://user-images.githubusercontent.com/72267897/144238466-848c703b-9984-4fad-a44a-e673dd136799.jpg)  
+![ead16cbfc626e7ad4fa6ea3a64bf853](https://user-images.githubusercontent.com/72267897/144238466-848c703b-9984-4fad-a44a-e673dd136799.jpg)   
+
 ---- **A iot Bike sytem based on RaspberryPi, Ardiuino, etc**  
 ## 0x1 What is This?
 Cyclic 's Kernel is an independent System With self-producing energy iot Web control, The system 's Energy Source is a 12V6W Generater. And The Voltage, Current is not cocerned, Now, I will introduce those stuff to You
