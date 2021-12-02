@@ -65,3 +65,74 @@ $ gpio readall
  | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |
  +-----+-----+---------+------+---+---Pi 4B--+---+------+---------+-----+-----+
 ```
+as We can see, The io pins are listed blow, thus, you can check the pins here and change the `p config` in the python script.  
+And now, The module used in The `Cyclic 's Kernel` Project will be introduced.
+
+## LCD1602
+  
+  
+   ![607e5853b75b5d5f74165caa6b1d30cf](https://www.makerguides.com/wp-content/uploads/2020/04/lcd.svg)   
+
+**lcd1602 module is a python module based on internet resourses**  
+First of all, LCD1602 is a LCD Which contain `16*2=32` Space to type,   
+>*Also, I will not expain How Send_data() & Send_command() Works, Because I don't Know How How does it work*  
+
+**Installed Functions:**
+## init_lcd()
+```python
+def init_lcd():
+    try:
+        send_command(0x33) # Must initialize to 8-line mode at first
+        time.sleep(0.005)
+        send_command(0x32) # Then initialize to 4-line mode
+        time.sleep(0.005)
+        send_command(0x28) # 2 Lines & 5*7 dots
+        time.sleep(0.005)
+        send_command(0x0C) # Enable display without cursor
+        time.sleep(0.005)
+        send_command(0x01) # Clear Screen
+        BUS.write_byte(LCD_ADDR ,0x08)
+    except:
+        return False
+    else:
+        return True
+```
+This function doesn't required any arguments, it just simply initial the LCD1602
+## clear_lcd()
+```python
+def clear_lcd():
+    send_command(0x01) # Clear Screen
+```
+This function will clean the LCD1602 's screen by calling `send_data()` function, basically it is just sendding a message to LCD1602.
+## print_lcd()
+```python
+def print_lcd(x, y, str):
+    if x < 0:
+        x = 0
+    if x > 15:
+        x = 15
+    if y <0:
+        y = 0
+    if y > 1:
+        y = 1
+ 
+    # Move cursor
+    addr = 0x80 + 0x40 * y + x
+    send_command(addr)
+     
+    for chr in str:
+        send_data(ord(chr))
+```
+for This function, it requires 3 argruments which is `x`,`y`,`str` Which I will expain first:  
+* **X**,The x coordinate That the `str` is "typing" to
+* **y**,The y coordinate That the `str` is "typing" to
+* **Str**,**It is a String That you wanted to type on Screen, IT NEEDS TO BE LESS THAN 16 CHARACTERS**
+ 
+In The function, Raspberry Pi Will move The cursor To the specific place That you pointed, then it will try to send the character in the string by sending asciis.
+
+## First Try
+```python
+init_lcd()
+print_lcd(0, 0, 'Hello, world!')
+```
+By using those function, You could See "Hello World" On the first line of the LCD1602
