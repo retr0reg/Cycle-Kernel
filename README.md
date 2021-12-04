@@ -137,3 +137,30 @@ init_lcd()
 print_lcd(0, 0, 'Hello, world!')
 ```
 By using those function, You could See "Hello World" On the first line of the LCD1602
+# Combine With HeWeather API
+Also, The With the LCD1602 Module, We can combine it with HeWeather API Easily, For register A HeWeather API account Online, You can just Reference Online Resources, and now, I will mainly phase in the Code we got for API calls.
+```python
+import requests
+import pprint
+Key = "&key=" + ""          #input keys
+CityName = ""
+def Getcity(CityName):
+    url_v2 = "https://geoapi.qweather.com/v2/city/lookup?location=" + CityName + Key
+    CityArg =  requests.get(url_v2).json()['location'][0]
+    return CityArg["id"]
+    
+    
+def GetInfo(location):
+    url = "https://devapi.qweather.com/v7/weather/now?" + Key + "&location=" + location
+    return requests.get(url).json()
+
+def RetWea():
+    CityId = Getcity(CityName)
+    return GetInfo(CityId)['now']['temp']
+
+if __name__ == '__main__':
+    print("It is: " + WeatherNow['now']['temp'] + " degree")
+```
+as we can see now, we are using `Request` Method in order to get the `html` output of the HeWeather 's APi server. in this Srcipt, you must edit The `Key` and
+`CityName` arguements so we can get positive infomations.  
+For Furthermore, I Will not Expain more, It is just a simple API Call , I think you are capable of understanding by your self.
