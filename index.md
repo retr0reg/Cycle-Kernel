@@ -34,8 +34,11 @@ While True:
   gpio.output(p,gpio.LOW)
   time.sleep(1)
 ```
+
 This script will First, it will set the pin finding mode to ``bmc``,thenit will set the p (GPIO.11) pin to output mode, After That, Raspberry Pi is going to run the scrpit in the `while loop` Which is set the `p` to high, Wait for 1 seconds set the `p` to low. repeated and repeated.  
 btw, You can The IO pin setting by using  `gpio readall`
+
+
 ```
 # root @ raspberrypi in ~ [18:49:46] 
 $ gpio readall
