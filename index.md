@@ -20,6 +20,7 @@ We chose to install it on the wire of the tire It work pretty well, We can get 5
 # RaspberryPi
 ![image](https://user-images.githubusercontent.com/72267897/144403737-64037c69-4959-492a-bb5d-5c7ec4068d5b.png)  
 For ours SBC (single-board Computer) We select Raspberry Pi due to the high-functing & the Raspberry-based environment, I found a RaspberryPi 4B, By using Serial Port debugging, I sucessfuly install Respberry Linux kernel ,After Then, it was a boring time of debugging & installing....... Environment. Anyway We First tried to to a basic IO In/Out Circius by coding a Python script With RPi.GIPO, also be carful when setting the IO port for BMC   
+
 ```python
 import RPi.GPIO as gpio
 import time
@@ -34,6 +35,7 @@ While True:
   gpio.output(p,gpio.LOW)
   time.sleep(1)
 ```  
+
 This script will First, it will set the pin finding mode to ``bmc``,thenit will set the p (GPIO.11) pin to output mode, After That, Raspberry Pi is going to run the scrpit in the `while loop` Which is set the `p` to high, Wait for 1 seconds set the `p` to low. repeated and repeated.  
 btw, You can The IO pin setting by using  `gpio readall`
 
@@ -67,6 +69,7 @@ $ gpio readall
  | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |
  +-----+-----+---------+------+---+---Pi 4B--+---+------+---------+-----+-----+
 ```
+
 as We can see, The io pins are listed blow, thus, you can check the pins here and change the `p config` in the python script.  
 And now, The module used in The `Cyclic 's Kernel` Project will be introduced.
 
@@ -81,6 +84,7 @@ First of all, LCD1602 is a LCD Which contain `16*2=32` Space to type,
 
 **Installed Functions:**
 ## init_lcd()
+
 ```python
 def init_lcd():
     try:
@@ -99,12 +103,14 @@ def init_lcd():
     else:
         return True
 ```
+
 This function doesn't required any arguments, it just simply initial the LCD1602
 ## clear_lcd()
 ```python
 def clear_lcd():
     send_command(0x01) # Clear Screen
 ```
+
 This function will clean the LCD1602 's screen by calling `send_data()` function, basically it is just sendding a message to LCD1602.
 ## print_lcd()
 ```python
