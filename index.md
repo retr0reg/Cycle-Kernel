@@ -1,5 +1,5 @@
 # Cyclic 's Kernel ![](https://img.shields.io/badge/SupportedBy-Ret1w1cky-blueviolet)
-![Untitled](https://user-images.githubusercontent.com/72267897/144699458-1e46ac3e-5501-4b31-be10-397a87a41ed0.png)
+![](https://cdn.jsdelivr.net/gh/DDizzzy79/cdn/posts/144699458-1e46ac3e-5501-4b31-be10-397a87a41ed0.png)
 
 ---- **A iot Bike sytem based on RaspberryPi, Ardiuino, etc**  
 ## 0x1 What is This?
@@ -18,7 +18,7 @@ For our Generaters, We selected A **12V6WGenerater** , So Far, The maximum of it
 But, We were not exclude That the generater can generate above 6V, So far, The generater 's voltage output had exceed our's minimum request.  
 We chose to install it on the wire of the tire It work pretty well, We can get 5~6v during a normal ride.
 # RaspberryPi
-![image](https://user-images.githubusercontent.com/72267897/144403737-64037c69-4959-492a-bb5d-5c7ec4068d5b.png)  
+![](https://cdn.jsdelivr.net/gh/DDizzzy79/cdn/posts/144403737-64037c69-4959-492a-bb5d-5c7ec4068d5b.png)
 For ours SBC (single-board Computer) We select Raspberry Pi due to the high-functing & the Raspberry-based environment, I found a RaspberryPi 4B, By using Serial Port debugging, I sucessfuly install Respberry Linux kernel ,After Then, it was a boring time of debugging & installing....... Environment. Anyway We First tried to to a basic IO In/Out Circius by coding a Python script With RPi.GIPO, also be carful when setting the IO port for BMC   
 
 ```python
@@ -76,7 +76,7 @@ And now, The module used in The `Cyclic 's Kernel` Project will be introduced.
 ## LCD1602
   
   
-   ![607e5853b75b5d5f74165caa6b1d30cf](https://www.makerguides.com/wp-content/uploads/2020/04/lcd.svg)   
+   ![](https://cdn.jsdelivr.net/gh/DDizzzy79/cdn/posts/lcd.svg)  
 
 **lcd1602 module is a python module based on internet resourses**  
 First of all, LCD1602 is a LCD Which contain `16*2=32` Space to type,   
