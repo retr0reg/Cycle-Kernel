@@ -20,6 +20,7 @@ We chose to install it on the wire of the tire It work pretty well, We can get 5
 # RaspberryPi
 ![image](https://user-images.githubusercontent.com/72267897/144403737-64037c69-4959-492a-bb5d-5c7ec4068d5b.png)  
 For ours SBC (single-board Computer) We select Raspberry Pi due to the high-functing & the Raspberry-based environment, I found a RaspberryPi 4B, By using Serial Port debugging, I sucessfuly install Respberry Linux kernel ,After Then, it was a boring time of debugging & installing....... Environment. Anyway We First tried to to a basic IO In/Out Circius by coding a Python script With RPi.GIPO, also be carful when setting the IO port for BMC   
+
 ```python
 import RPi.GPIO as gpio
 import time
@@ -33,7 +34,8 @@ While True:
   time.sleep(1)
   gpio.output(p,gpio.LOW)
   time.sleep(1)
-```  
+```   
+
 This script will First, it will set the pin finding mode to ``bmc``,thenit will set the p (GPIO.11) pin to output mode, After That, Raspberry Pi is going to run the scrpit in the `while loop` Which is set the `p` to high, Wait for 1 seconds set the `p` to low. repeated and repeated.  
 btw, You can The IO pin setting by using  `gpio readall`
 
