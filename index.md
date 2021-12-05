@@ -14,7 +14,7 @@ Our plan inclues that:
 * Energy Store Device
 * Other IOT Devices
 # Generaters
-For our Generaters, We selected A **12V6WGenerater** , So Far, The maximum of it is aboat ``5~6V``  
+For our Generaters, We selected A **12V6WGenerater** , So Far, The maximum of it is aboat `5~6V`
 But, We were not exclude That the generater can generate above 6V, So far, The generater 's voltage output had exceed our's minimum request.  
 We chose to install it on the wire of the tire It work pretty well, We can get 5~6v during a normal ride.
 # RaspberryPi
@@ -33,13 +33,11 @@ While True:
   time.sleep(1)
   gpio.output(p,gpio.LOW)
   time.sleep(1)
-```
-
+```  
 This script will First, it will set the pin finding mode to ``bmc``,thenit will set the p (GPIO.11) pin to output mode, After That, Raspberry Pi is going to run the scrpit in the `while loop` Which is set the `p` to high, Wait for 1 seconds set the `p` to low. repeated and repeated.  
 btw, You can The IO pin setting by using  `gpio readall`
 
-
-```
+```shell
 # root @ raspberrypi in ~ [18:49:46] 
 $ gpio readall
  +-----+-----+---------+------+---+---Pi 4B--+---+------+---------+-----+-----+
