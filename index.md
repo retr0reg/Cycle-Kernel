@@ -172,9 +172,12 @@ as we can see now, we are using `Request` Method in order to get the `html` outp
 `CityName` arguements so we can get positive infomations.  
 For Furthermore, I Will not Expain more, It is just a simple API Call , I think you are capable of understanding by your self.
 # 8x8 Martrix Project
-![](https://cdn.jsdelivr.net/gh/DDizzzy79/cdn/posts/20211209193815.png)
+    
+![](https://cdn.jsdelivr.net/gh/DDizzzy79/cdn/posts/20211209193815.png)  
+   
 **Max7219 is a set of LED Which Makes a 8x8 Matrix display screen, it is able to show anything but in a limit space**   
 For the Matrix Project, We selected the `Max7219` With the `spi`. You need to Connect the pins like below:   
+   
 |Name|Function|RPi Function|
 |----|--------|------------|
 |VCC|5V Connection|5V|
@@ -182,7 +185,7 @@ For the Matrix Project, We selected the `Max7219` With the `spi`. You need to Co
 |DIN|Data In|MOSI|
 |CS|Chip Select|SPI CE0|
 |CLK|Clock|SPI CLK|
-  
+    
 Firstly, We needs to enable the spi method in Raspberry Pi by using `sudo raspi-config`. After configuration, You can use `lsmod | grep -i spi` and `ls -l /dev/spi*` to check the conect with the `MAX7219`, If you had a a Affirmative Responde on the terminal, That means we can move to the next step.  
 ## Manipulating MAX7219
 We can controll MAX7219 By using https://github.com/rm-hull/luma.led_matrix respository. You can install the module by using `python3 -m pip install`,After cloning the respository into your host machine, you can check for the arguement by using `python3 examples/matrix_demo.py -h`.   
