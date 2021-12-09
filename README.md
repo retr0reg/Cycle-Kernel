@@ -3,7 +3,7 @@
 
 ---- **A Iot Bike system based on RaspberryPi, Arduino**  
 ## 0x1 What is This?
-Cyclic 's Kernel is an independent System With self-producing energy iot Web control, The system 's Energy Source is a 12V6W Generater. And The Voltage, Current is not cocerned, Now, I will introduce those stuff to You
+Cyclic 's Kernel is an independent System With self-producing energy iot Web control, The system 's Energy Source came from a 12V6W Generater. Now, I will introduce those stuff to You
 [Plan.pdf](https://github.com/DDizzzy79/ScienceFair/files/7633868/default.pdf)  
 Also, for a extra info, Lots of our code is based on lots of thoughts on internet
 ## 0x2 Basic plans
@@ -178,5 +178,59 @@ For the Matrix Project, We selected the `Max7219` With the `spi`. You need to Co
 |CLK|Clock|SPI CLK|
   
 Firstly, We needs to enable the spi method in Raspberry Pi by using `sudo raspi-config`. After configuration, You can use `lsmod | grep -i spi` and `ls -l /dev/spi*` to check the conect with the `MAX7219`, If you had a a Affirmative Responde on the terminal, That means we can move to the next step.  
-## Controlling MAX7219
-We can controll MAX7219 By using https://github.com/rm-hull/luma.led_matrix respository. You can install the module by using `python3 -m pip intsall `
+## Manipulating MAX7219
+We can controll MAX7219 By using https://github.com/rm-hull/luma.led_matrix respository. You can install the module by using `python3 -m pip install`,After cloning the respository into your host machine, you can check for the arguement by using `python3 examples/matrix_demo.py -h`.   
+   
+```shell
+$ python3 examples/matrix_demo.py -h
+usage: matrix_demo.py [-h] [--cascaded CASCADED]
+                      [--block-orientation {0, 90, -90}]
+
+matrix_demo arguments
+
+optional arguments:
+-h, --help            show this help message and exit
+--cascaded CASCADED, -n CASCADED
+                      Number of cascaded MAX7219 LED matrices (default: 1)
+--block-orientation {0, 90, -90}
+                      Corrects block orientation when wired vertically
+                      (default: 0)
+```
+
+you can test your `Max7219` by run This Python script. This will display different symbol and character.  
+## IOT Connections
+If you had read our's iot_controll project carefully, you can find a part of code which is use to manipulating MAX7219.  
+  
+```python
+@app.route("/left")
+def left():
+    for x in range(10):
+        #print("drawing")
+        for x in range(5):
+            with canvas(device) as draw:
+                text(draw, (0, 0), chr(27), fill="white")
+                time.sleep(0.01)
+    return render_template("main.html")
+            
+@app.route("/right")
+def right():
+    for x in range(10):
+        #print("drawing")
+        for x in range(4):
+            with canvas(device) as draw:
+                text(draw, (0, 0), chr(26), fill="white")
+                time.sleep(0.01)
+    return render_template("main.html")
+
+@app.route("/line")
+def line():
+    for x in range(10):
+        #print("drawing")
+        for x in range(4):
+            with canvas(device) as draw:
+                text(draw, (0, 0), chr(24), fill="white")
+                time.sleep(0.01)
+    return render_template("main.html")
+```
+  
+As we can see here, We are trying to output a symobols (technically a character.) by using ascii code, also, you can try to display any character you wanted by searching  `ascii chart`.
