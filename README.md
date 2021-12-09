@@ -165,12 +165,14 @@ as we can see now, we are using `Request` Method in order to get the `html` outp
 `CityName` arguements so we can get positive infomations.  
 For Furthermore, I Will not Expain more, It is just a simple API Call , I think you are capable of understanding by your self.
 # 8x8 Matrix Project
-![](https://cdn.jsdelivr.net/gh/DDizzzy79/cdn/posts/20211209193815.png)   
+   
+     
+![](https://cdn.jsdelivr.net/gh/DDizzzy79/cdn/posts/20211209193815.png)     
   
 **Max7219 is a set of LED Which Makes a 8x8 Matrix display screen, it is able to show anything but in a limit space**   
 For the Matrix Project, We selected the `Max7219` With the `spi`. You need to Connect the pins like below:   
 |Name|Function|RPi Function|
-|----|--------|------------|
+|---|---|---|
 |VCC|5V Connection|5V|
 |GND|Ground|0V/GND|
 |DIN|Data In|MOSI|
