@@ -173,3 +173,70 @@ as we can see now, we are using `Request` Method in order to get the `html` outp
 For Furthermore, I Will not Expain more, It is just a simple API Call , I think you are capable of understanding by your self.
 # 8x8 Martrix Project
 ![](https://cdn.jsdelivr.net/gh/DDizzzy79/cdn/posts/20211209193815.png)
+**Max7219 is a set of LED Which Makes a 8x8 Matrix display screen, it is able to show anything but in a limit space**   
+For the Matrix Project, We selected the `Max7219` With the `spi`. You need to Connect the pins like below:   
+|Name|Function|RPi Function|
+|----|--------|------------|
+|VCC|5V Connection|5V|
+|GND|Ground|0V/GND|
+|DIN|Data In|MOSI|
+|CS|Chip Select|SPI CE0|
+|CLK|Clock|SPI CLK|
+  
+Firstly, We needs to enable the spi method in Raspberry Pi by using `sudo raspi-config`. After configuration, You can use `lsmod | grep -i spi` and `ls -l /dev/spi*` to check the conect with the `MAX7219`, If you had a a Affirmative Responde on the terminal, That means we can move to the next step.  
+## Manipulating MAX7219
+We can controll MAX7219 By using https://github.com/rm-hull/luma.led_matrix respository. You can install the module by using `python3 -m pip install`,After cloning the respository into your host machine, you can check for the arguement by using `python3 examples/matrix_demo.py -h`.   
+   
+```shell
+$ python3 examples/matrix_demo.py -h
+usage: matrix_demo.py [-h] [--cascaded CASCADED]
+                      [--block-orientation {0, 90, -90}]
+
+matrix_demo arguments
+
+optional arguments:
+-h, --help            show this help message and exit
+--cascaded CASCADED, -n CASCADED
+                      Number of cascaded MAX7219 LED matrices (default: 1)
+--block-orientation {0, 90, -90}
+                      Corrects block orientation when wired vertically
+                      (default: 0)
+```
+
+you can test your `Max7219` by run This Python script. This will display different symbol and character.  
+## IOT Connections
+If you had read our's iot_controll project carefully, you can find a part of code which is use to manipulating MAX7219.  
+  
+```python
+@app.route("/left")
+def left():
+    for x in range(10):
+        #print("drawing")
+        for x in range(5):
+            with canvas(device) as draw:
+                text(draw, (0, 0), chr(27), fill="white")
+                time.sleep(0.01)
+    return render_template("main.html")
+            
+@app.route("/right")
+def right():
+    for x in range(10):
+        #print("drawing")
+        for x in range(4):
+            with canvas(device) as draw:
+                text(draw, (0, 0), chr(26), fill="white")
+                time.sleep(0.01)
+    return render_template("main.html")
+
+@app.route("/line")
+def line():
+    for x in range(10):
+        #print("drawing")
+        for x in range(4):
+            with canvas(device) as draw:
+                text(draw, (0, 0), chr(24), fill="white")
+                time.sleep(0.01)
+    return render_template("main.html")
+```
+  
+As we can see here, We are trying to output a symobols (technically a character.) by using ascii code, also, you can try to display any character you wanted by searching  `ascii chart`.
