@@ -1,4 +1,4 @@
-# Cyclic 's Kernel ![](https://img.shields.io/badge/SupportedBy-Ret1w1cky-blueviolet)
+# Cycle 's Kernel ![](https://img.shields.io/badge/SupportedBy-Ret1w1cky-blueviolet)
 ![Untitled](https://user-images.githubusercontent.com/72267897/144699458-1e46ac3e-5501-4b31-be10-397a87a41ed0.png)
 
 ---- **A Iot Bike system based on RaspberryPi, Arduino**  
