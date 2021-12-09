@@ -1,7 +1,7 @@
 # Cyclic 's Kernel ![](https://img.shields.io/badge/SupportedBy-Ret1w1cky-blueviolet)
 ![Untitled](https://user-images.githubusercontent.com/72267897/144699458-1e46ac3e-5501-4b31-be10-397a87a41ed0.png)
 
----- **A iot Bike sytem based on RaspberryPi, Ardiuino, etc**  
+---- **A Iot Bike system based on RaspberryPi, Arduino**  
 ## 0x1 What is This?
 Cyclic 's Kernel is an independent System With self-producing energy iot Web control, The system 's Energy Source is a 12V6W Generater. And The Voltage, Current is not cocerned, Now, I will introduce those stuff to You
 [Plan.pdf](https://github.com/DDizzzy79/ScienceFair/files/7633868/default.pdf)  
@@ -165,4 +165,18 @@ as we can see now, we are using `Request` Method in order to get the `html` outp
 `CityName` arguements so we can get positive infomations.  
 For Furthermore, I Will not Expain more, It is just a simple API Call , I think you are capable of understanding by your self.
 # 8x8 Matrix Project
-![](https://cdn.jsdelivr.net/gh/DDizzzy79/cdn/posts/20211209193815.png)
+![](https://cdn.jsdelivr.net/gh/DDizzzy79/cdn/posts/20211209193815.png)   
+  
+**Max7219 is a set of LED Which Makes a 8x8 Matrix display screen, it is able to show anything but in a limit space**   
+For the Matrix Project, We selected the `Max7219` With the `spi`. You need to Connect the pins like below:   
+|Name|Function|RPi Function|
+|----|--------|------------|
+|VCC|5V Connection|5V|
+|GND|Ground|0V/GND|
+|DIN|Data In|MOSI|
+|CS|Chip Select|SPI CE0|
+|CLK|Clock|SPI CLK|
+  
+Firstly, We needs to enable the spi method in Raspberry Pi by using `sudo raspi-config`. After configuration, You can use `lsmod | grep -i spi` and `ls -l /dev/spi*` to check the conect with the `MAX7219`, If you had a a Affirmative Responde on the terminal, That means we can move to the next step.  
+## Controlling MAX7219
+We can controll MAX7219 By using https://github.com/rm-hull/luma.led_matrix respository. You can install the module by using `python3 -m pip intsall `
