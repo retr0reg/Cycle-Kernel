@@ -21,7 +21,7 @@ We chose to install it on the wire of the tire. It works well, and We can get 5~
 ![](https://cdn.jsdelivr.net/gh/DDizzzy79/cdn/posts/144403737-64037c69-4959-492a-bb5d-5c7ec4068d5b.png)
 For our SBC (single-board Computer) We selected Raspberry Pi due to the high-functioning & Raspberry-based environment; I found a RaspberryPi 4B; by using Serial Port debugging, I successfully installed the Raspberry Linux kernel, After Then, it was a dull time of debugging & installing....... Environment. We First tried to do a basic IO In/Out Circus by coding a Python script With RPi.GIPO, also be careful when setting the IO port for BMC   
 
-"`python
+```python
 import RPi.GPIO as gpio
 import time
 
@@ -39,7 +39,7 @@ While True:
 This Script will First, it will set the pin finding mode to "bmc ", then it will set the p (GPIO.11) pin to output mode; after That, Raspberry Pi is going to run the script in the `while loop` Which is set the `p` to high, Wait for 1 second set the `p` to low. Repeated and repeated.  
 btw, You can set The IO pin setting by using  `gpio readall`
 
-"`shell
+```shell
 # root @ raspberrypi in ~ [18:49:46] 
 $ gpio readall
  +-----+-----+---------+------+---+---Pi 4B--+---+------+---------+-----+-----+
@@ -106,14 +106,14 @@ def init_lcd():
 
 This function doesn't require any arguments, it just simply initial the LCD1602
 ## clear_lcd()
-"`python
+```python
 def clear_lcd():
     send_command(0x01) # Clear Screen
 ```
 
 This function will clean the LCD1602's screen by calling `send_data()` function, basically it is just sending a message to LCD1602.
 ## print_lcd()
-"`python
+```python
 def print_lcd(x, y, str):
     if x < 0:
         x = 0
@@ -139,14 +139,14 @@ for This function, it requires 3 argruments which is `x`,`y',`str` Which I will 
 In The function, Raspberry Pi Will move The cursor To the specific place That you pointed, then it will try to send the character in the string by sending asciis.
 
 ## First Try
-"`python
+```python
 init_lcd()
 print_lcd(0, 0, 'Hello, world!')
 ```
 By using those function, You could see "Hello World" On the first line of the LCD1602
 # Combine With HeWeather API
 Also, The With the LCD1602 Module, We can combine it with HeWeather API Easily, For register A HeWeather API account Online, You can just Reference Online Resources, and now, I will mainly phase in the Code we got for API calls.
-"`python
+```python
 import requests
 import pprint
 Key = "&key=" + ""          #input keys
@@ -190,7 +190,7 @@ Firstly, We need to enable the spin method in Raspberry Pi by using `sudo raspi-
 ## Manipulating MAX7219
 We can controll MAX7219 By using https://github.com/rm-hull/luma.led_matrix repository. You can install the module by using `python3 -m pip install`,After cloning the repository into your host machine, you can check for the arguement by using `python3 examples/matrix_demo.py -h`.   
    
-"`shell
+```shell
 $ python3 examples/matrix_demo.py -h
 usage: matrix_demo.py [-h] [--cascaded CASCADED]
                       [--block-orientation {0, 90, -90}]
@@ -210,7 +210,7 @@ you can test your `Max7219` by run This Python script. This will display differe
 ## IOT Connections
 If you had read our's iot_controll project carefully, you can find a part of Code which is use to manipulating MAX7219.  
   
-"`python
+```python
 @app.route("/left")
 def left():
     for x in range(10):
