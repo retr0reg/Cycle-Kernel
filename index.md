@@ -3,7 +3,7 @@
 
 ---- **A Iot Bike system based on RaspberryPi, Arduino**  
 ## 0x1 What is This?
-Cyclic's Kernel is an independent System With self-producing energy IoT Web control; the system's Energy Source is a 12V6W Generator. And The Voltage, Current is not concerned; now, I will introduce those stuff to You
+Cyclic's Kernel is an independent System With self-producing energy IoT Web control; the system's Energy Source is a 12V6W Generator. now, I will introduce those stuff to You
 [Plan.pdf](https://github.com/DDizzzy79/ScienceFair/files/7633868/default.pdf)  
 Also, for extra info, Lots of our Code is based on lots of thoughts on the internet
 ## 0x2 Basic plans
