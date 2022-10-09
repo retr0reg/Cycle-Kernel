@@ -1,43 +1,47 @@
 <!Document html>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <!-- 新 Bootstrap 核心 CSS 文件 -->
-  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <!-- 可选的Bootstrap主题文件（一般不用引入） -->
-  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <style>
-      a {
-        width:100%
-      }
-  </style>
-  <head>
-      <title>LED灯开关</title>
-  </head>
-  <body>
-      <div class="container-fluid">
-        <div class="row"> 
-          <a href="/time" class="btn btn-success btn-lg" role="butoon">打印 时间</a>
-        </div>
-        </br>   
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<style>
+    a {
+        width: 100%
+    }
+</style>
+
+<head>
+    <title>LED灯开关</title>
+</head>
+
+<body>
+    <div class="container">
         <div class="row">
-          <a href="/print" class="btn btn btn-info btn-lg" role="button">打印 HelloWorld</a>
+            <div class="col-md-4 col-md-offset-4 titles">
+                <h1><span class="stro">Cycle's</span><br><span class="stroll2">Kernel</span><br>Controll Panel</h1>
+            </div>
+            
+        </div>
+        <div class="row">
+            <a href="/time" class="btn btn-success btn-lg col-md-4" role="butoon">打印 时间</a>
+            <a href="/print" class="btn btn btn-info btn-lg col-md-4" role="button">打印 HelloWorld</a>
+            <a href="/clear" class="btn btn-danger btn-lg col-md-4" role="button">清理屏幕</a>
         </div>
         </br>
         <div class="row">
-          <a href="/clear" class="btn btn-danger btn-lg" role="button">清理屏幕</a>
+            <a href="/left" class="btn btn-danger btn-lg" role="button">左边</a>
         </div>
         <div class="row">
-          <a href="/left" class="btn btn-danger btn-lg" role="button">左边</a>
+            <a href="/right" class="btn btn-danger btn-lg" role="button">右边</a>
         </div>
         <div class="row">
-          <a href="/right" class="btn btn-danger btn-lg" role="button">右边</a>
+            <a href="/line" class="btn btn-danger btn-lg" role="button">直行</a>
         </div>
-        <div class="row">
-          <a href="/line" class="btn btn-danger btn-lg" role="button">直行</a>
-        </div>
-      </div>
-      <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-      <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-      <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-      <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  </body>
+    </div>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!-- <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+</body>
